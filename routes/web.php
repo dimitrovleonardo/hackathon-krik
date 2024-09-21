@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\singleProjectController;
 
 Route::view('services', 'services');
 Route::view('ourTeam', 'ourTeam');
@@ -24,7 +26,7 @@ Route::view('/newsletter/date', 'newsletter.index')->name('newsletter.index');
 Route::view('/newsletter/show', 'newsletter.show')->name('newsletter.show');
 
 
-Route::view('dashboard','dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 
 
 Route::middleware('auth')->group(function () {
@@ -36,3 +38,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 
+Route::get('/Projects', [ProjectController::class, 'projects']);
+Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
+
+
+
+Route::get('/project/single', function () {
+    return view('projects.singleproject');
+});
