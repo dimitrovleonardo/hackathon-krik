@@ -55,9 +55,9 @@
                         <label class="text-black font-semibold mb-2 text-xs flex items-center">
                             Број на картичка*
                             <span class="ml-auto flex items-center">
-                                <img src="https://via.placeholder.com/30" alt="Visa" class="ml-1">
-                                <img src="https://via.placeholder.com/30" alt="Mastercard" class="ml-1">
-                                <img src="https://via.placeholder.com/30" alt="AMEX" class="ml-1">
+                                <i class="fa-brands fa-cc-visa"></i>
+                                <i class="fa-brands fa-cc-mastercard"></i>
+                                <i class="fa-brands fa-cc-amex"></i>
                             </span>
                         </label>
                         <input type="number" class="border-2 border-black rounded py-2 px-4"
