@@ -24,7 +24,7 @@ Route::get('/teamMember3', function () {
 
 Route::view('about', 'about_us');
 Route::view('/', 'welcome')->name('home');
-Route::view('dashboard','dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -33,3 +33,19 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+
+Route::get('/volunteers', function () {
+    return view('volunteers.volunteers');
+})->name('volunteers');
+
+Route::get('/volunteer', function () {
+    return view('volunteers.volunteer');
+})->name('volunteer');
+
+Route::get('/form', function () {
+    return view('volunteers.form-volunteer');
+})->name('form');
+
+Route::get('/documents', function () {
+    return view('volunteers.documents');
+});
