@@ -24,6 +24,7 @@
     <main>
         {{ $slot }}
     </main>
+    @include('layouts.footer')
 </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
