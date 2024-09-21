@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('about', 'about_us');
 Route::view('/', 'welcome')->name('home');
+Route::view('/newsletter/monthly', 'newsletter')->name('newsletter.index');
+Route::view('/newsletter/date', 'newsletter.index')->name('newsletter.index');
+Route::view('/newsletter/show', 'newsletter.show')->name('newsletter.show');
 Route::view('dashboard','dashboard')->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
