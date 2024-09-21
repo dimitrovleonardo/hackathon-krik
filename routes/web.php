@@ -3,28 +3,29 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
-Route::get('/ourTeam', function () {
-    return view('ourTeam');
-})->name('ourTeam');
-Route::get('/donation', function () {
-    return view('donation');
-})->name('donation');
-Route::get('/teamMember1', function () {
-    return view('team.member1');
-})->name('member1');
-Route::get('/teamMember2', function () {
-    return view('team.member2');
-})->name('member2');
-Route::get('/teamMember3', function () {
-    return view('team.member3');
-})->name('member3');
+Route::view('services', 'services');
+Route::view('ourTeam', 'ourTeam');
+Route::view('donation', 'donation');
+Route::view('teamMember1', 'team.member1');
+Route::view('teamMember2', 'team.member2');
+Route::view('teamMember3', 'team.member3');
+
+
+Route::view('volunteers', 'volunteers.volunteers');
+Route::view('volunteer', 'volunteers.volunteer');
+Route::view('form', 'volunteers.form-volunteer');
+Route::view('documents' 'volunteers.documents');
+
 
 Route::view('about', 'about_us');
 Route::view('/', 'welcome')->name('home');
-Route::view('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('/newsletter/monthly', 'newsletter')->name('newsletter.index');
+Route::view('/newsletter/date', 'newsletter.index')->name('newsletter.index');
+Route::view('/newsletter/show', 'newsletter.show')->name('newsletter.show');
+
+
+Route::view('dashboard','dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -34,18 +35,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-Route::get('/volunteers', function () {
-    return view('volunteers.volunteers');
-})->name('volunteers');
 
-Route::get('/volunteer', function () {
-    return view('volunteers.volunteer');
-})->name('volunteer');
-
-Route::get('/form', function () {
-    return view('volunteers.form-volunteer');
-})->name('form');
-
-Route::get('/documents', function () {
-    return view('volunteers.documents');
-});
