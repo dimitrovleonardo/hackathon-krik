@@ -14,7 +14,7 @@ Route::view('teamMember3', 'team.member3');
 Route::view('volunteers', 'volunteers.volunteers');
 Route::view('volunteer', 'volunteers.volunteer');
 Route::view('form', 'volunteers.form-volunteer');
-Route::view('documents' 'volunteers.documents');
+Route::view('documents', 'volunteers.documents');
 
 
 Route::view('about', 'about_us');
