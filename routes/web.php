@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\paypalDonationController;
 
 Route::get('/services', function () {
     return view('services');
@@ -21,6 +23,11 @@ Route::get('/teamMember2', function () {
 Route::get('/teamMember3', function () {
     return view('team.member3');
 })->name('member3');
+
+Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
+
+Route::post('/paypal-donation', [paypalDonationController::class, 'store'])->name('paypal.donation.store');
+
 
 Route::view('about', 'about_us');
 Route::view('/', 'welcome')->name('home');
