@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .scrollbar::-webkit-scrollbar {
     width: 12px; /* Width of the scrollbar */
     height: 8px; /* Height of the scrollbar */
