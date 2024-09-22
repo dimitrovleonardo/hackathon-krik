@@ -3,6 +3,8 @@
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\paypalDonationController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\singleProjectController;
 use App\Http\Controllers\VolunteerController;
@@ -23,6 +25,11 @@ Route::get('/single-volunteer/{volunteer}', [VolunteerController::class, 'getSin
 Route::get('form', [VolunteerController::class, 'form'])->name('form');
 Route::get('documents', [VolunteerController::class, 'documents']);
 Route::post('/applicants', [ApplicantController::class, 'store'])->name('storeApplicant');
+
+
+Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
+
+Route::post('/paypal-donation', [paypalDonationController::class, 'store'])->name('paypal.donation.store');
 
 
 Route::view('about', 'about_us');
