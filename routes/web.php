@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
@@ -21,6 +22,7 @@ Route::get('/get-all', [VolunteerController::class, 'getAll'])->name('getAll');
 Route::get('/single-volunteer/{volunteer}', [VolunteerController::class, 'getSingle']);
 Route::get('form', [VolunteerController::class, 'form'])->name('form');
 Route::get('documents', [VolunteerController::class, 'documents']);
+Route::post('/applicants', [ApplicantController::class, 'store'])->name('storeApplicant');
 
 
 Route::view('about', 'about_us');
