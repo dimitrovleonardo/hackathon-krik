@@ -17,9 +17,9 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             UserSeeder::class,
             TeamSeeder::class,
+            ShortTermVolunteers::class,
+            VolunteersSeeder::class,
+            ProductSeeder::class,
         ]);
-
-        // Call the ProductSeeder to seed the products table
-        $this->call(ProductSeeder::class);
     }
 }
