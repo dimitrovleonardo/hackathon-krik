@@ -40,6 +40,10 @@ Route::get('form', [VolunteerController::class, 'form'])->name('form');
 Route::get('documents', [VolunteerController::class, 'documents']);
 Route::post('/applicants', [ApplicantController::class, 'store'])->name('storeApplicant');
 
+Route::get('/accessability', function () {
+    return view('layouts.accessibility');
+});
+
 
 Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
 
