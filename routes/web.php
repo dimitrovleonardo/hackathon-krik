@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\singleProjectController;
+use App\Http\Controllers\VolunteerController;
 
 Route::view('services', 'services');
 Route::view('ourTeam', 'ourTeam');
@@ -13,10 +14,13 @@ Route::view('teamMember2', 'team.member2');
 Route::view('teamMember3', 'team.member3');
 
 
-Route::view('volunteers', 'volunteers.volunteers');
-Route::view('volunteer', 'volunteers.volunteer');
-Route::view('form', 'volunteers.form-volunteer');
-Route::view('documents', 'volunteers.documents');
+Route::get('/volunteers', [VolunteerController::class, 'index'])->name('volunteers');
+Route::get('/get-long', [VolunteerController::class, 'getLongTerm'])->name('getLongTerm');
+Route::get('/get-short', [VolunteerController::class, 'getShortTerm'])->name('getShortTerm');
+Route::get('/get-all', [VolunteerController::class, 'getAll'])->name('getAll');
+Route::get('/single-volunteer/{volunteer}', [VolunteerController::class, 'getSingle']);
+Route::get('form', [VolunteerController::class, 'form'])->name('form');
+Route::get('documents', [VolunteerController::class, 'documents']);
 
 
 Route::view('about', 'about_us');

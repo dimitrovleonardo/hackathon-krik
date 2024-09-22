@@ -6,8 +6,8 @@
             </div>
             <div class="flex items-end justify-center pt-14">
                 <div class="font-mulish flex flex-wrap items-center justify-center gap-x-6 gap-y-6 text-center text-[32px] font-bold capitalize leading-[48px] text-neutral-900 min-[1910px]:flex-nowrap">
-                    <div class="w-[619px] flex-shrink-0">Долг Рок</div>
-                    <div class="w-[619px] flex-shrink-0">Краток рок</div>
+                    <div id="longTerm" class="w-[619px] flex-shrink-0 cursor-pointer">Долг Рок</div>
+                    <div id="shortTerm" class="w-[619px] flex-shrink-0 cursor-pointer">Краток рок</div>
                 </div>
             </div>
             <div class="flex items-end justify-center pt-3.5 w-3/5 mx-auto">
@@ -21,168 +21,104 @@
                 </div>
             </div>
             <div class=" pt-5">
-                <div class="grid grid-cols-4 pt-6 gap-5 w-4/5 mx-auto">
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/1-Idil-Abes.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Idil Abes</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">20 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/2-Melih-Furkan-Orta.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Melih Furkan Orta</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">22 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/3-Bedirhan-Sevim.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Bedirhan Sevim</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">22 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/4-Zeynep-Cebeci.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Zeynep Cebeci</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">20 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/5-Merve-Ozkan.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Merve Ozkan</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">18 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/6-Melek Cakan.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Melek Cakan</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">20 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/7-Melisa-Pektaş.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Melisa Pektaş</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">23 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/8-Manon Lacoste.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Manon Lacoste</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">21 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/9-Lisa Simone.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Lisa Simones</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">24 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/10-Kaan-Alğın.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Kaan Alğın</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">23 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/11-Metehan-Cam.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Metehan Cam</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">23 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
-                            <a href="#">
-                                <img class="rounded-t-3xl" src="{{ asset('images/Volunteers/Volunteers/12-Ali-Karabay.png') }}" alt="" />
-                            </a>
-                            <div class="p-5">
-                                <a href="#">
-                                    <h5 class="mb-2 text-md font-bold tracking-tight ">Ali Karabay</h5>
-                                </a>
-                                <p class="mb-3 text-base text-gray-700 dark:text-gray-300">29 Години, Турција</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-4 pt-6 gap-5 w-4/5 mx-auto" id="volunteers">
+
 
                 </div>
-
-
             </div>
-        </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+
+            $.ajax({
+                url: "{{ route('getAll' )}}",
+                type: "GET",
+                success: function(data) {
+
+                    console.log(data);
+                    $('#volunteers').empty();
+
+                    data.data.forEach(function(volunteer) {
+                        $('#volunteers').append(
+                            `
+                            <div class="card volunteer cursor-pointer" data-id="${volunteer.id}">
+                                <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
+                                        <img class="rounded-t-3xl" src="{{ asset('storage/') }}/${volunteer.image}" alt="" /> 
+                                    <div class="p-5">
+                                        <h5 class="mb-2 text-md font-bold tracking-tight ">${volunteer.name}</h5>
+                                        <p class="mb-3 text-base text-gray-700 dark:text-gray-300">${volunteer.age} Години, ${volunteer.country}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+                        );
+                    });
+                }
+            });
+
+            $('#longTerm').click(function() {
+                $.ajax({
+                    url: "{{ route('getLongTerm' )}}",
+                    type: "GET",
+                    success: function(data) {
+
+                        console.log(data);
+                        $('#volunteers').empty();
+
+                        data.data.forEach(function(volunteer) {
+                            $('#volunteers').append(
+                                `
+                            <div class="card volunteer" data-id="${volunteer.id}">
+                                <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
+                                        <img class="rounded-t-3xl" src="{{ asset('storage/') }}/${volunteer.image}" alt="" /> 
+                                    <div class="p-5">
+                                        <h5 class="mb-2 text-md font-bold tracking-tight ">${volunteer.name}</h5>
+                                        <p class="mb-3 text-base text-gray-700 dark:text-gray-300">${volunteer.age} Години, ${volunteer.country}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+                            );
+                        });
+                    }
+                });
+            });
+
+            $('#shortTerm').click(function() {
+                $.ajax({
+                    url: "{{ route('getShortTerm' )}}",
+                    type: "GET",
+                    success: function(data) {
+
+                        console.log(data);
+                        $('#volunteers').empty();
+
+                        data.data.forEach(function(volunteer) {
+                            $('#volunteers').append(
+                                `
+                            <div class="card volunteer" data-id="${volunteer.id}">
+                                <div class="max-w-xs bg-white border border-gray-200 rounded-3xl shadow-md ">
+                                        <img class="rounded-t-3xl" src="{{ asset('storage/') }}/${volunteer.image}" alt="" /> 
+                                    <div class="p-5">
+                                        <h5 class="mb-2 text-md font-bold tracking-tight ">${volunteer.name}</h5>
+                                        <p class="mb-3 text-base text-gray-700 dark:text-gray-300">${volunteer.age} Години, ${volunteer.country}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            `
+                            );
+                        });
+                    }
+                });
+            });
+
+            $(document).on('click', '.volunteer', function(e) {
+                e.preventDefault();
+                const volunteerId = $(this).data('id');
+                window.location.href = `/single-volunteer/${volunteerId}`;
+            });
+
+        });
+    </script>
 </x-guest-layout>

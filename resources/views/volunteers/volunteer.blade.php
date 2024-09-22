@@ -4,13 +4,13 @@
             <div class="flex justify-center items-center w-full min-h-screen">
                 <!-- Single Card -->
                 <div class="card ">
-                    <a href="#" class="flex flex-col items-center border border-black rounded-xl shadow md:flex-row bg-white">
-                        <img class="w-full rounded-lg h-[500px] md:h-[400px] md:w-96 object-cover" src="{{ asset('images/Volunteers/Volunteers/1-Idil-Abes.png') }}" alt="">
+                    <div class="flex flex-col items-center border border-black rounded-xl shadow md:flex-row bg-white">
+                        <img class="w-full rounded-lg h-[500px] md:h-[400px] md:w-96 object-cover" src=" {{ asset('storage/'. $volunteer->image) }}" alt="">
                         <div class="flex flex-col justify-between p-4 leading-normal px-9">
-                            <h5 class="mb-2 text-2xl font-bold tracking-tight">Idil Abes</h5>
-                            <p class="mb-3 font-normal ">Hello! I'm Idil. I am 20. I am studying in the department of law in Turkey, Istanbul. This is my first experience in a project like this one, so I am pretty excited about working and spending time with other volunteers. I love team projects and doing something together. Also, I liked Macedonia and Skopje. This city has great nature and statues. I wonder how we will work and spend amazing time with others when I meet new people from other cultures.</p>
+                            <h5 class="mb-2 text-2xl font-bold tracking-tight">{{ $volunteer->name }}</h5>
+                            <p class="mb-3 font-normal ">{{ $volunteer->description }}</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
             <!-- Projects -->

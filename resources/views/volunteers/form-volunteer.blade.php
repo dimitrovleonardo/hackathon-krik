@@ -13,12 +13,12 @@
                                 <input type="text" id="name" class="w-full p-2 border-2 border-black rounded-3xl text-gray-100" placeholder="Example Namington">
                             </div>
                             <div class="mb-2">
-                                <label for="address" class="block mb-2 text-sm font-bold">Адреса*</label>
-                                <input type="text" id="address" class="w-full p-2 border-2 border-black rounded-3xl" placeholder="Example Street 24">
+                                <label for="country" class="block mb-2 text-sm font-bold">Адреса*</label>
+                                <input type="text" id="country" class="w-full p-2 border-2 border-black rounded-3xl" placeholder="Example Street 24">
                             </div>
                             <div class="mb-2">
-                                <label for="phone" class="block mb-2 text-sm font-bold">Телефонски број*</label>
-                                <input type="text" id="phone" class="w-full p-2 border-2 border-black rounded-3xl" placeholder="+38900000000">
+                                <label for="number" class="block mb-2 text-sm font-bold">Телефонски број*</label>
+                                <input type="text" id="number" class="w-full p-2 border-2 border-black rounded-3xl" placeholder="+38900000000">
                             </div>
                             <div class="mb-2">
                                 <label for="email" class="block mb-2 text-sm font-bold">Email*</label>
@@ -30,12 +30,12 @@
                                 <p class="block mb-2 text-sm font-bold">Возраст*</p>
                                 <div class="flex space-x-6 mb-10">
                                     <div class="flex items-center border-2 border-black rounded-3xl">
-                                        <input id="bordered-radio-1" type="radio" value="option1" name="bordered-radio" class="hidden" />
-                                        <label for="bordered-radio-1" class=" px-10 ms-2 text-xs  cursor-pointer">Под 18 години</label>
+                                        <input id="age" type="radio" value="option1" name="age" class="hidden" />
+                                        <label for="age" class=" px-10 ms-2 text-xs  cursor-pointer">Под 18 години</label>
                                     </div>
                                     <div class="flex items-center border-2 border-black rounded-3xl">
-                                        <input id="bordered-radio-2" type="radio" value="option2" name="bordered-radio" class="hidden" checked />
-                                        <label for="bordered-radio-2" class=" px-10 ms-2 text-xs  cursor-pointer">Над 18 години</label>
+                                        <input id="age" type="radio" value="option2" name="age" class="hidden" checked />
+                                        <label for="age" class=" px-10 ms-2 text-xs  cursor-pointer">Над 18 години</label>
                                     </div>
                                 </div>
                             </div>
@@ -62,24 +62,24 @@
                                 <p class="block mb-2 text-sm font-bold">Волонтерски интереси*</p>
                                 <div class="flex space-x-6 ">
                                     <div class="flex items-center border-2 border-black rounded-3xl">
-                                        <input id="bordered-radio-1" type="radio" value="option1" name="bordered-radio" class="hidden" />
-                                        <label for="bordered-radio-1" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
+                                        <input id="interests" type="radio" value="option1" name="interests" class="hidden" />
+                                        <label for="interests" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
                                     </div>
                                     <div class="flex items-center border-2 border-black rounded-3xl">
-                                        <input id="bordered-radio-2" type="radio" value="option2" name="bordered-radio" class="hidden" checked />
-                                        <label for="bordered-radio-2" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
+                                        <input id="interests" type="radio" value="option2" name="interests" class="hidden" checked />
+                                        <label for="interests" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
                                     </div>
                                 </div>
                             </div>
                             <div class="mb-3">
                                 <div class="flex space-x-6 ">
                                     <div class="flex items-center border-2 border-black rounded-3xl">
-                                        <input id="bordered-radio-1" type="radio" value="option1" name="bordered-radio" class="hidden" />
-                                        <label for="bordered-radio-1" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
+                                        <input id="interests" type="radio" value="option1" name="interests" class="hidden" />
+                                        <label for="interests" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
                                     </div>
                                     <div class="flex items-center border-2 border-black rounded-3xl">
-                                        <input id="bordered-radio-2" type="radio" value="option2" name="bordered-radio" class="hidden" checked />
-                                        <label for="bordered-radio-2" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
+                                        <input id="interests" type="radio" value="option2" name="interests" class="hidden" checked />
+                                        <label for="interests" class=" px-10 ms-2 text-xs  cursor-pointer">Lorem Ipsum</label>
                                     </div>
                                 </div>
                             </div>
