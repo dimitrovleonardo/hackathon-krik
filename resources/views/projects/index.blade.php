@@ -1,70 +1,104 @@
 <x-guest-layout>
+    <div class="mx-auto w-4/5 mt-10">
+        <!-- Projects Header -->
+        <h1 class="text-4xl font-extrabold text-center mb-10">Проекти</h1>
 
-    <body class="box-border">
-        <div class="font-mulish text-center text-[56px] pt-[150px] font-extrabold leading-[72px] text-neutral-900">
-            Проекти </div>
-
-        <div class="pl-[18%] pt-[200px]  text-[36px]">Тековни</div>
-
-
-        <div class=" grid grid-cols-6 grid-rows-2">
-            <div class=" col-span-1"> </div>
-            <div class=" col-span-2 row-span-2 bg-gradient-to-r m-0"><img class="
-             w-full h-full object-cover object-center p-2"
-                    src="css/frame 280.png" alt="image description">
-            </div>
-            <div class=" col-span-2 bg-gradient-to-r m-0"><img class="
-             w-full h-full object-cover object-center p-2"
-                    src="css/frame 285.png" alt="image description"></div>
-            <div class=" col-span-1"></div>
-            <div class=" col-span-1"></div>
-            <div class=" col-span-1">
-                <img class=" w-full h-full object-cover object-center p-2"
-                    src="css/Frame 436.png" alt="image description">
-            </div>
-            <div class=" col-span-1"> <img class="w-full h-full object-cover object-center p-2"
-                    src="css/Frame 282.png" alt="image description">
-            </div>
-            <div class=" col-span-1"></div>
-            <div class=" col-span-1"></div>
-
+        <!-- Current Projects Section -->
+        <h2 class="text-3xl font-bold mb-6">Тековни</h2>
+        <div class="grid grid-cols-3 gap-4">
+            @foreach($currentProjects as $index => $project)
+                @if($index == 0)
+                    <div class="col-span-2 bg-yellow-400 rounded-lg relative">
+                        <a href="{{ route('project.show', $project->id) }}">
+                            <img src="{{ $project->getFirstMediaUrl('project_images') }}" alt="{{ $project->title }}"
+                                 class="rounded-lg w-full h-full object-cover">
+                            <div class="absolute bottom-4 left-4 text-white font-extrabold text-2xl">{{ $project->title }}</div>
+                        </a>
+                    </div>
+                @elseif($index == 1)
+                    <div class="col-span-1 grid grid-rows-2 gap-4">
+                        <a href="{{ route('project.show', $project->id) }}">
+                            <div class="bg-purple-300 rounded-lg relative">
+                                <img src="{{ $project->getFirstMediaUrl('project_images') }}" alt="{{ $project->title }}"
+                                     class="rounded-lg w-full h-full object-cover">
+                                <div class="absolute bottom-4 left-4 text-white font-extrabold text-lg">{{ $project->title }}</div>
+                            </div>
+                        </a>
+                        @if($currentProjects->count() > 2)
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="{{ route('project.show', $currentProjects[2]->id) }}">
+                                    <div class="bg-black rounded-lg relative">
+                                        <img src="{{ $currentProjects[2]->getFirstMediaUrl('project_images') }}" alt="{{ $currentProjects[2]->title }}"
+                                             class="rounded-lg w-full h-full object-cover">
+                                        <div class="absolute bottom-4 left-4 text-white font-extrabold text-sm">{{ $currentProjects[2]->title }}</div>
+                                    </div>
+                                </a>
+                                <a href="{{ route('project.show', $currentProjects[3]->id) }}">
+                                    <div class="bg-yellow-400 rounded-lg relative">
+                                        <img src="{{ $currentProjects[3]->getFirstMediaUrl('project_images') }}" alt="{{ $currentProjects[3]->title }}"
+                                             class="rounded-lg w-full h-full object-cover">
+                                        <div class="absolute bottom-4 left-4 text-white font-extrabold text-sm">{{ $currentProjects[3]->title }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
+                    </div>
+                @endif
+            @endforeach
         </div>
-        <div class="pl-[18%] pt-[300px] text-[36px]">Завршени</div>
 
-        <div class=" grid grid-cols-6 grid-rows-2 ">
-            <div class=" col-span-1 row-span-2"></div>
-            <div class=" col-span-1 row-span-2 bg-gradient-to-r "><img class="w-full h-full object-cover object-center p-2"
-                    src="css/group 46.png" alt="image description">
-            </div>
-            <div class=" col-span-1 bg-gradient-to-r"><img class="w-full h-full object-cover object-center p-2"
-                    src="css/frame 440.png" alt="image description"></div>
-            <div class=" col-span-2 row-span-2 bg-gradient-to-r "><img class="w-full h-full object-cover object-center p-2"
-                    src="css/frame 283.png" alt="image description"></div>
-            <div class=" col-span-1"></div>
-            <div class=" col-span-1 bg-gradient-to-r">
-                <img class="w-full h-full object-cover object-center p-2"
-                    src="css/Frame 436.png" alt="image description">
-            </div>
-
-
+        <!-- Pagination -->
+        <div class="mt-8">
+            {{ $currentProjects->links() }}
         </div>
-        <div class=" grid grid-cols-6 grid-rows-2 pt-[100px]">
-            <div class=" col-span-1"> </div>
-            <div class=" col-span-2 row-span-2 bg-gradient-to-r "><img class="w-full h-full object-cover object-center p-2"
-                    src="css/frame 284.png" alt="image description">
-            </div>
-            <div class=" col-span-2 bg-gradient-to-r"><img class="w-full h-full object-cover object-center p-2"
-                    src="css/frame 437.png" alt="image description"></div>
-            <div class=" col-span-1"></div>
-            <div class=" col-span-1"></div>
-            <div class=" col-span-1">
-                <img class="w-full h-full object-cover object-center p-2"
-                    src="css/Frame 439.png" alt="image description">
-            </div>
-            <div class=" col-span-1"> <img class="w-full h-full object-cover object-center p-2"
-                    src="css/Frame 438.png" alt="image description">
-            </div>
 
+        <!-- Completed Projects Section -->
+        <h2 class="text-3xl font-bold mt-12 mb-6">Завршени</h2>
+        <div class="grid grid-cols-3 gap-4">
+            @foreach($completedProjects as $index => $project)
+                @if($index == 0)
+                    <div class="col-span-2 bg-yellow-400 rounded-lg relative">
+                        <a href="{{ route('project.show', $project->id) }}">
+                            <img src="{{ $project->getFirstMediaUrl('project_images') }}" alt="{{ $project->title }}"
+                                 class="rounded-lg w-full h-full object-cover">
+                            <div class="absolute bottom-4 left-4 text-white font-extrabold text-2xl">{{ $project->title }}</div>
+                        </a>
+                    </div>
+                @elseif($index == 1)
+                    <div class="col-span-1 grid grid-rows-2 gap-4">
+                        <a href="{{ route('project.show', $project->id) }}">
+                            <div class="bg-purple-300 rounded-lg relative">
+                                <img src="{{ $project->getFirstMediaUrl('project_images') }}" alt="{{ $project->title }}"
+                                     class="rounded-lg w-full h-full object-cover">
+                                <div class="absolute bottom-4 left-4 text-white font-extrabold text-lg">{{ $project->title }}</div>
+                            </div>
+                        </a>
+                        @if($completedProjects->count() > 2)
+                            <div class="grid grid-cols-2 gap-4">
+                                <a href="{{ route('project.show', $completedProjects[2]->id) }}">
+                                    <div class="bg-black rounded-lg relative">
+                                        <img src="{{ $completedProjects[2]->getFirstMediaUrl('project_images') }}" alt="{{ $completedProjects[2]->title }}"
+                                             class="rounded-lg w-full h-full object-cover">
+                                        <div class="absolute bottom-4 left-4 text-white font-extrabold text-sm">{{ $completedProjects[2]->title }}</div>
+                                    </div>
+                                </a>
+                                <a href="{{ route('project.show', $completedProjects[3]->id) }}">
+                                    <div class="bg-yellow-400 rounded-lg relative">
+                                        <img src="{{ $completedProjects[3]->getFirstMediaUrl('project_images') }}" alt="{{ $completedProjects[3]->title }}"
+                                             class="rounded-lg w-full h-full object-cover">
+                                        <div class="absolute bottom-4 left-4 text-white font-extrabold text-sm">{{ $completedProjects[3]->title }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endif
+                    </div>
+                @endif
+            @endforeach
         </div>
-    </body>
+
+        <!-- Pagination -->
+        <div class="mt-8 mb-28">
+            {{ $completedProjects->links() }}
+        </div>
+    </div>
 </x-guest-layout>

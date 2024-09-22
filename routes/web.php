@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\paypalDonationController;
@@ -9,12 +12,21 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\singleProjectController;
 use App\Http\Controllers\VolunteerController;
 
+
+Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'])->name('project.index');
+Route::get('/project/{project}', [\App\Http\Controllers\ProjectController::class, 'show'])->name('project.show');
+Route::get('/', [\App\Http\Controllers\ProjectController::class, 'showProject'])->name('home');
+
+
+Route::get('/api/team-members', [\App\Http\Controllers\TeamController::class, 'index'])->name('team-members');
+Route::get('/team/{team}', [\App\Http\Controllers\TeamController::class, 'show'])->name('team.show');
+Route::view('our-team', 'ourTeam')->name('team');
+
+
+
+
 Route::view('services', 'services');
-Route::view('ourTeam', 'ourTeam');
 Route::view('donation', 'donation');
-Route::view('teamMember1', 'team.member1');
-Route::view('teamMember2', 'team.member2');
-Route::view('teamMember3', 'team.member3');
 
 
 Route::get('/volunteers', [VolunteerController::class, 'index'])->name('volunteers');
@@ -32,30 +44,11 @@ Route::post('/donate', [DonationController::class, 'store'])->name('donate.store
 Route::post('/paypal-donation', [paypalDonationController::class, 'store'])->name('paypal.donation.store');
 
 
-Route::view('about', 'about_us');
-Route::view('/', 'welcome')->name('home');
-Route::view('/newsletter/monthly', 'newsletter')->name('newsletter.index');
-Route::view('/newsletter/date', 'newsletter.index')->name('newsletter.index');
+Route::post('/newsletter/subscribe',[NewsletterController::class,'subscribe'])->name('newsletter.subscribe');
+Route::get('/newsletter',[NewsletterController::class,'monthly'])->name('newsletter');
+Route::get('/newsletter/{newsletter}',[NewsletterController::class,'index'])->name('newsletter.index');
 Route::view('/newsletter/show', 'newsletter.show')->name('newsletter.show');
 
 
-Route::view('dashboard', 'dashboard')->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('about', 'about_us');
 
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-require __DIR__ . '/auth.php';
-
-
-Route::get('/Projects', [ProjectController::class, 'projects']);
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects');
-
-
-
-Route::get('/project/single', function () {
-    return view('projects.singleproject');
-});
