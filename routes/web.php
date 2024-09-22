@@ -2,9 +2,15 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ApplicantController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DonationController;
+use App\Http\Controllers\paypalDonationController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\singleProjectController;
+use App\Http\Controllers\VolunteerController;
 
 
 Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'])->name('project.index');
@@ -23,10 +29,19 @@ Route::view('services', 'services');
 Route::view('donation', 'donation');
 
 
-Route::view('volunteers', 'volunteers.volunteers');
-Route::view('volunteer', 'volunteers.volunteer');
-Route::view('form', 'volunteers.form-volunteer');
-Route::view('documents', 'volunteers.documents');
+Route::get('/volunteers', [VolunteerController::class, 'index'])->name('volunteers');
+Route::get('/get-long', [VolunteerController::class, 'getLongTerm'])->name('getLongTerm');
+Route::get('/get-short', [VolunteerController::class, 'getShortTerm'])->name('getShortTerm');
+Route::get('/get-all', [VolunteerController::class, 'getAll'])->name('getAll');
+Route::get('/single-volunteer/{volunteer}', [VolunteerController::class, 'getSingle']);
+Route::get('form', [VolunteerController::class, 'form'])->name('form');
+Route::get('documents', [VolunteerController::class, 'documents']);
+Route::post('/applicants', [ApplicantController::class, 'store'])->name('storeApplicant');
+
+
+Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
+
+Route::post('/paypal-donation', [paypalDonationController::class, 'store'])->name('paypal.donation.store');
 
 
 Route::post('/newsletter/subscribe',[NewsletterController::class,'subscribe'])->name('newsletter.subscribe');
@@ -36,3 +51,4 @@ Route::view('/newsletter/show', 'newsletter.show')->name('newsletter.show');
 
 
 Route::view('about', 'about_us');
+

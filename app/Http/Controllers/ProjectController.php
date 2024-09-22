@@ -76,5 +76,4 @@ class ProjectController extends Controller
 
         return view('welcome', compact('currentProject', 'images', 'projects', 'projectimages'));
     }
-
 }
