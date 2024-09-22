@@ -8,10 +8,6 @@ use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\paypalDonationController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\singleProjectController;
-use App\Http\Controllers\VolunteerController;
-
 
 Route::get('/projects', [\App\Http\Controllers\ProjectController::class, 'index'])->name('project.index');
 Route::get('/project/{project}', [\App\Http\Controllers\ProjectController::class, 'show'])->name('project.show');
