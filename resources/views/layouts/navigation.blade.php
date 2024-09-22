@@ -61,16 +61,16 @@
                     </div>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Услуги</a>
+                    <a href="{{url('/services')}}" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Услуги</a>
                 </li>
                 <li>
-                    <a href="#" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Проекти</a>
+                    <a href="{{route('project.index')}}" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Проекти</a>
                 </li>
                 <li>
                     <a href="#contact" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Контакт</a>
                 </li>
                 <li>
-                    <a href="#" class="text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-3xl text-sm px-5 py-2.5 me-2 mb-2">Донирај</a>
+                    <a href="{{url('donation')}}" class="text-white bg-black hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-3xl text-sm px-5 py-2.5 me-2 mb-2">Донирај</a>
                 </li>
             </ul>
         </div>

@@ -47,7 +47,6 @@ class NewsletterResource extends Resource
             ->bulkActions([
                 Tables\Actions\DeleteBulkAction::make(),
 
-                // Custom Bulk Action for sending email
                 Tables\Actions\BulkAction::make('send_email')
                     ->label('Прати емаил')
                     ->modalHeading('Испрати емаил')
@@ -62,7 +61,7 @@ class NewsletterResource extends Resource
                     ])
                     ->action(function (array $data, $records) {
                         $batchSize = 10;
-                        $delay = 30;
+                        $delay = 5;
 
                         $records->chunk($batchSize)->each(function ($batch, $index) use ($data, &$delay) {
                             foreach ($batch as $newsletter) {

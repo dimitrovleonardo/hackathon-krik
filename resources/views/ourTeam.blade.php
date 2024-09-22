@@ -135,12 +135,11 @@
         let teamMembers = [];
         let currentIndex = 0;
 
-        // Fetch team members data from the API
         fetch('/api/team-members')
             .then(response => response.json())
             .then(data => {
                 teamMembers = data;
-                updateMemberDisplay(currentIndex); // Call the function to display the first team member
+                updateMemberDisplay(currentIndex);
             })
             .catch(error => console.error('Error fetching team members:', error));
 
@@ -151,14 +150,13 @@
             const leftIndex = (index === 0) ? teamMembers.length - 1 : index - 1;
             const rightIndex = (index === teamMembers.length - 1) ? 0 : index + 1;
 
-            // Update main member
+
             document.getElementById('member-image').src = member.image;
             document.getElementById('member-name').innerText = member.name;
             document.getElementById('member-role').innerText = member.role;
             document.getElementById('linkedin-link').href = member.linkedin;
             document.getElementById('main-link').href = `/team/${member.id}`;
 
-            // Update left and right small members
             document.getElementById('left-image').src = teamMembers[leftIndex].image;
             document.getElementById('left-name').innerText = teamMembers[leftIndex].name;
             document.getElementById('left-role').innerText = teamMembers[leftIndex].role;

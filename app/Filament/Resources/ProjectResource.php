@@ -29,8 +29,8 @@ class ProjectResource extends Resource
                 RichEditor::make('description')->label('Содржина на Проектот')->columnSpan('full')->required(),
                 Textarea::make('project_goal')->label('Цел на Проектот?')->columnSpan('full')->required(),
                 Textarea::make('for_whom')->label('За кого е наменет овај проект?')->columnSpan('full')->required(),
-                DatePicker::make('starting_at')->label('Започнува на')->required(),
-                DatePicker::make('ending_at')->label('Завршува на')->nullable(),
+                DatePicker::make('starting_at')->minDate(now())->label('Започнува на')->required(),
+                DatePicker::make('ending_at')->minDate(now())->label('Завршува на')->nullable(),
                 Forms\Components\Select::make('category_id')
                     ->label('Category')
                     ->relationship('category', 'name')
