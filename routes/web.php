@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DonationController;
 use App\Http\Controllers\paypalDonationController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/services', function () {
     return view('services');
@@ -23,6 +24,14 @@ Route::get('/teamMember2', function () {
 Route::get('/teamMember3', function () {
     return view('team.member3');
 })->name('member3');
+Route::get('/products', [ProductController::class, 'index'])->name('products');
+
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('showProduct');
+Route::post('/product/{id}/purchase', [ProductController::class, 'purchase'])->name('purchase');
+
+
+
+
 
 Route::post('/donate', [DonationController::class, 'store'])->name('donate.store');
 

@@ -2,6 +2,12 @@
     <div class="container mx-auto px-4 py-8">
         <h1 class="text-center text-4xl font-bold text-black mb-8">Донирај!</h1>
 
+        @if(session('success'))
+            <div class="bg-green-100 text-green-700 px-4 py-3 rounded mb-6 text-center">
+                {{ session('success') }}
+            </div>
+        @endif
+        <!-- Tab Navigation -->
         <div class="flex justify-center space-x-8 mb-6">
             <button class="relative text-black text-lg font-semibold focus:outline-none pb-2" id="individual-tab">
                 Индивидуа
@@ -12,12 +18,14 @@
             </button>
         </div>
 
-        <div class="bg-[#F8F8F4] p-6 rounded-xl shadow-lg">
+        <!-- Main Donation Form -->
+        <div class="bg-[#F8F8F4] p-6 rounded-xl shadow-lg mb-10">
             <form action="{{ route('paypal.donation.store') }}" method="POST">
                 @csrf
                 <p class="text-black text-lg font-medium mb-4">Lorem ipsum dolor sit amet consectetur.</p>
 
-                <div class="flex space-x-4 mb-6">
+                <!-- Amount Selection Buttons -->
+                <div class="flex flex-wrap space-x-4 mb-6">
                     <label class="border-2 border-black text-black py-2 px-4 rounded-full text-sm cursor-pointer">
                         <input type="radio" name="amount" value="1000" class="hidden"> 1000 Ден
                     </label>
@@ -39,15 +47,17 @@
                     fermentum.
                 </p>
 
+                <!-- Custom Amount Input -->
                 <div class="flex items-center mb-6">
                     <label class="text-black text-lg mr-4">Друг Износ:</label>
                     <input type="number" name="custom_amount" style="width: 150px;"
                         class="border-2 border-black rounded-full py-2 px-4 flex-1" placeholder="Input">
                 </div>
 
-                <div class="flex space-x-4">
+                <!-- Payment Buttons -->
+                <div class="flex flex-wrap space-x-4">
                     <button onclick="scrollToCardPaymentForm(event)" type="submit" name="payment_method" value="Card"
-                        class="bg-black text-white py-2 px-6 rounded-full flex items-center">
+                        class="bg-black text-white py-2 px-6 rounded-full flex items-center mb-4 lg:mb-0">
                         <i class="fas fa-credit-card mr-2"></i> Плати со картичка
                     </button>
                     <button type="submit" name="payment_method" value="PayPal"
@@ -58,22 +68,23 @@
             </form>
         </div>
 
-
-
+        <!-- Card Payment Form -->
         <div id="card-payment-form" class="mt-8 p-6 border-2 rounded-xl shadow-md">
-            <!-- Updated form with action and method attributes -->
             <form action="{{ route('donate.store') }}" method="POST">
                 @csrf
-                <div class="grid grid-cols-2 gap-4 mb-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <!-- Donor Name -->
                     <div class="flex flex-col">
                         <label class="text-black font-semibold mb-2">Име на Донатор*</label>
                         <input type="text" name="donor_name" class="border-2 border-black rounded py-2 px-4"
                             placeholder="Example Namington" required>
                     </div>
+
+                    <!-- Card Number -->
                     <div class="flex flex-col">
                         <label class="text-black font-semibold mb-2 text-xs flex items-center">
                             Број на картичка*
-                            <span class="ml-auto flex items-center">
+                            <span class="ml-auto flex items-center space-x-1">
                                 <i class="fa-brands fa-cc-visa"></i>
                                 <i class="fa-brands fa-cc-mastercard"></i>
                                 <i class="fa-brands fa-cc-amex"></i>
@@ -82,12 +93,14 @@
                         <input type="number" name="card_number" class="border-2 border-black rounded py-2 px-4"
                             placeholder="**** **** **** ****" required>
                     </div>
+
                     <!-- Email -->
                     <div class="flex flex-col">
                         <label class="text-black font-semibold mb-2">Email*</label>
                         <input type="email" name="email" class="border-2 border-black rounded py-2 px-4"
                             placeholder="example@email.com" required>
                     </div>
+
                     <!-- Expiration Date and CVV -->
                     <div class="flex space-x-2">
                         <div class="flex-1 flex flex-col">
@@ -101,18 +114,21 @@
                                 placeholder="CVV" required>
                         </div>
                     </div>
+
                     <!-- Phone Number -->
                     <div class="flex flex-col">
                         <label class="text-black font-semibold mb-2">Телефонски број*</label>
                         <input type="tel" name="phone_number" class="border-2 border-black rounded py-2 px-4"
                             placeholder="+3890000000" required>
                     </div>
+
                     <!-- Card Holder Name -->
                     <div class="flex flex-col">
                         <label class="text-black font-semibold mb-2">Име на сопственик*</label>
                         <input type="text" name="card_holder_name" class="border-2 border-black rounded py-2 px-4"
                             placeholder="Example Namington" required>
                     </div>
+
                     <!-- Donation Amount -->
                     <div class="flex flex-col col-span-2">
                         <label class="text-black font-semibold mb-2">Сума за донирање*</label>
@@ -120,6 +136,7 @@
                             placeholder="a million?" required>
                     </div>
                 </div>
+
                 <!-- Donate Button -->
                 <button type="submit" class="bg-red-500 text-white py-2 px-8 rounded-full">Донирај</button>
             </form>

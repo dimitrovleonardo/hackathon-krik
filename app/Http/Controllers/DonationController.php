@@ -25,6 +25,6 @@ class DonationController extends Controller
             'amount' => $request->input('amount'),
         ]);
 
-        return back()->with('success', 'Your donation has been recorded successfully!');
+        return redirect()->route('donation')->with('success', 'Thank you for your donation!');
     }
 }
